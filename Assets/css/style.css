@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.grid-container{
+    display: grid;
+    /*grid-template-columns: auto auto auto;*/
+    grid-template-areas: 
+    "aside header"
+    "aside main"
+    "aside main"
+    "footer nav";
+    grid-template-columns: 10% auto;
+    grid-template-rows: 8% auto 8%;
+    height: 100vh;
+}
+aside, header, main, nav, footer{
+    
+}
+header{
+    grid-area: header;
+    background-color: #8c94a7;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 5px;
+}
+aside{
+    grid-area: aside; 
+    display: flex;
+    justify-content: center;  
+    background-color: #1045c9 ;
+    color: white;
+
+}
+.titulo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 10px
+}
+ul li{
+    list-style: none;
+    line-height: 45px;
+}
+main{
+    grid-area: main;
+    display: grid;
+    background-color: #BEBCBB ;
+    padding: 10px;
+}
+
+.grid-galeria{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+.card {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.card img{
+    height: 80%;
+    width: 100%;
+
+}
+.card button{
+    width: 27%;
+    height: 10%;
+    background-color: #07287B;
+    color: white;
+    padding: 5px;
+    margin: 15px;
+}
+.nav{
+    grid-area: nav; 
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    background-color: white ;
+    color: blue;
+}
+.icon{
+    display: flex;
+    margin: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #07287B;
+
+}
+.menu-burger{
+    display: none;
+}
+@media(max-width:576px){
+    .grid-container{
+        display: block;
+    }
+    .grid-galeria{
+        grid-template-columns: 1fr;
+    }
+    .aside{
+        padding-top: 0;
+    }
+    .menu-burger{
+        display: block;
+    }
+    .aside ul{
+        display: none;
+
+    }
+}
