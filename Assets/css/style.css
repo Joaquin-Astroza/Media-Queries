@@ -30,17 +30,16 @@ header{
 aside{
     grid-area: aside; 
     display: flex;
-    justify-content: center;  
+    flex-direction: column; 
     background-color: #1045c9 ;
     color: white;
-
 }
 .titulo{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin-left: 10px
+    gap: 5px;
 }
 ul li{
     list-style: none;
@@ -51,6 +50,7 @@ main{
     display: grid;
     background-color: #BEBCBB ;
     padding: 10px;
+    justify-content: center;
 }
 
 .grid-galeria{
@@ -59,9 +59,11 @@ main{
     gap: 10px;
     align-items: center;
     justify-content: space-around;
+    max-height: 1000px;
+    overflow-y: scroll;
 }
 .card {
-    width: 300px;
+    max-width: 300px;
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -95,6 +97,7 @@ main{
     margin: 10px;
     align-items: center;
     justify-content: space-around;
+    gap: 10px;
 }
 footer{
     grid-area: footer;
@@ -104,7 +107,9 @@ footer{
     justify-content: center;
     color: white;
     background-color: #07287B;
-
+}
+footer p{
+    text-align: center;
 }
 .menu-burger{
     display: none;
@@ -116,13 +121,21 @@ footer{
     .grid-galeria{
         grid-template-columns: 1fr;
     }
-    .aside{
+    aside{
         padding-top: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center ;
+        justify-content: space-between;
+        padding: 15px;
     }
     .menu-burger{
         display: block;
     }
-    .aside ul{
+    aside ul{
         display: none;
+    }
+    header{
+
     }
 }
